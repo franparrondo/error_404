@@ -2,11 +2,11 @@
 	margin: 0;
 	padding: 0;
 }
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600&family=Nunito:wght@200;400&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600&family=Nunito:wght@200;400&display=swap');*/
 
 
 body{
-    background-color: black;
+    background-image: url(../img/backgroung0.jpeg );
 }
 
 div{
@@ -17,70 +17,80 @@ div img{
 }
 
 /*Aimacion TEXTO*/
-
-@keyframes animaciontexto{
-    0%{transform: translate(-600px);}
-    50%{transform: translate(360px);}  
+/*la idea es que empuje a anne y luego ella lo epuje al texto volviendo al centro*/
+@keyframes animaciontext{
+    0%{transform: translateX(-600px);}
+    50%{transform: translateX(360px);}  
     100%{transform: translateX(100px);}
 }
-.texto{
-    width: 40%;
-    height: 200px;
+
+.text{
+    width: 36%;
+    height: 230px;
     position:absolute;
-    left: 16%;
-    top: 40%;
-    background-color:#939393e6; 
+    margin: 5px;
+    left: 14%;
+    top: 50%;
+    background-color:rgb(192, 192, 192) ;   
     border-radius: 30px;
     text-align:center;
-    animation-name: animaciontexto;
-    animation-duration: 10s;
-    animation-timing-function: ease;
-    z-index: 1;
-    
+    animation-name: animaciontext;
+    animation-duration: 9s; 
+    animation-fill-mode: forwards;
+    z-index: 1; /*para que este por arriba de anne*/
 }   
-
-.texto h1{
-    font-family: 'Bodoni Moda', serif;
-    font-size: 60px;
+.text h1{
+    font-family: 'Abril Fatface';
+    font-size: 65px;
     font-weight: bolder;
-    padding: 15px;
- 
+    padding: 5px;
+    text-shadow: 0.1em 0.1em rgba(122, 121, 121, 0.867); 
 }
-
-.texto h2{
+.text h2{
     font-family: 'Nunito', sans-serif;
-    font-size: 30px;
-    font-weight: lighter;
-}   
-
-
-.texto a{
-    text-decoration: none;
+    font-size: 35px;
+    font-weight:lighter;
+    font-style: italic;
+    margin-bottom: 20px;
+}  
+@keyframes boton{
+    0%{transform:scale(1);}
+    100%{transform:scale(1.1);}
+}
+.boton a{
     font-family: 'Nunito', sans-serif;
-    font-size: 25px;
-    font-weight: bold;
+    font-size: 26px;
     color: black;
-   
+    border: 1px ridge;
+    border-radius: 20px;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none; 
+    background-color:rgba(122, 121, 121, 0.867);  
 }
+.boton:hover{ 
+    animation-name: boton;
+    animation-duration: 2s; 
+    animation-fill-mode: forwards;
+    font-weight: bold;
+} 
 
 /*Aimacion ANNE*/
 
 @keyframes animacionanne{
-    0%{transform: translate(-100px);}
-    50%{transform: translate(700px);}  
+    0%{transform: translateX(-100px);}
+    50%{transform: translateX(700px);}  
     100%{transform: translateX(400px);}
 }
 
 .anne{
-    width: 35%;
+    width: 38%;
     position: absolute;
     left: 15%;
     right: 25%;
     top: 10%;
     bottom: 25%;
     animation-name: animacionanne;
-    animation-duration: 10s;
-    animation-iteration-count:inherit;
-    
-
+    animation-duration: 9s;
+    animation-fill-mode: forwards;    
 }
